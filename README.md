@@ -22,7 +22,7 @@ We will first introduce the structure and requirements of the code, followed by 
 
 ## Requirements
 
-* numpy==1.19.0
+* numpy>=1.19.0
 
 ## Quick Start
 

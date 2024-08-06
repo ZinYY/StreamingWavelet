@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="StreamingWavelet",
-    version="1.0.2",
+    version="1.0.3",
     author="Yu-Yang Qian",
     url='https://github.com/ZinYY/StreamingWavelet',
     author_email="qianyy@lamda.nju.edu.cn",
@@ -18,8 +18,7 @@ setuptools.setup(
                 "In Proceedings of the 41st International Conference on Machine Learning (ICML 2024).",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=setuptools.find_packages(where="StreamingWavelet"),
-    package_dir={'': 'StreamingWavelet'},
+    packages=setuptools.find_packages(),
     platforms='any',
     classifiers=[
         "Programming Language :: Python :: 3",
