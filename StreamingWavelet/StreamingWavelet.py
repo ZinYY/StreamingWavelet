@@ -1,6 +1,6 @@
 '''
 This is an implementation for Streaming Wavelet Operator,
-which sequentially applies wavelet transform to a 1D signal efficiently.
+which sequentially applies wavelet transform to an online sequence efficiently.
     ** Time complexity: O(k * log(T)) for each update,
        where k is the order, and T is the sequence length.
     ** Space complexity: O(k * log(T)).
@@ -52,8 +52,8 @@ def cdjv_dyad_down(bhi, F, LEF, REF):
 
 class StreamingWavelet_order1():
     '''
-    This class is used to sequentially apply wavelet transform to a
-        1D signal efficiently (with lazy update & bitwise operation).
+    This class is used to sequentially apply wavelet transform to
+        an online sequence efficiently (with lazy update & bitwise operation).
     Time Complexity: O(k * log T) every update (add_signal), where k is the order
     Storage Complexity: a total O(k * log T), where k is the order
     
@@ -200,8 +200,9 @@ class StreamingWavelet_order1():
 
 class StreamingWavelet():
     '''
-    This class is used to sequentially apply wavelet transform to a
-    1D signal efficiently (with lazy update & bitwise operation).
+    This class is used to sequentially apply wavelet transform to
+        an online sequence signal efficiently (with lazy update & bitwise operation).
+        
         Time Complexity: O(k * log T) every update (add_signal), where k is the order
         Storage Complexity: a total O(k * log T), where k is the order
     '''

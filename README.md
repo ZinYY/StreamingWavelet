@@ -1,7 +1,7 @@
 # Python implementation for _Streaming Wavelet Operator_
 
 This is the python implementation for the Streaming Wavelet Operator, which **sequentially**
-applies wavelet transform to a 1D signal efficiently in an online manner (instead of recalculation in each round).
+applies wavelet transform to a sequence efficiently in an online manner (instead of recalculation in each round).
 
 The **speed** of the Streaming Wavelet Operator is much faster than the traditional wavelet transform for streaming data,
 especially for long signals, due to its use of lazy updates and bit-wise operations in the implementation.
@@ -42,7 +42,7 @@ Then, for a sequence of length 10000, one can use the following code to sequenti
 import numpy as np
 import StreamingWavelet
 
-SW = StreamingWavelet.Operator(128, 10000, 1)  # Initialize the Streaming Wavelet Operator
+SW = StreamingWavelet.Operator(128, 10000, 1, get_coeff=False)  # Initialize the Streaming Wavelet Operator
 
 # Generate a sequence of length 10000
 x_list = []
@@ -56,3 +56,27 @@ for i in range(10000):
 ```
 
 which will output the norm of the wavelet coefficients in each round.
+
+---
+
+Note that the default mode is `get_coeff=False`, which will only maintain the **2-norm** of the wavelet coefficients.
+If you want to get the wavelet coefficients, you can set `get_coeff=True` when initializing the Streaming Wavelet Operator (this will take more storage):
+
+```python
+import numpy as np
+import StreamingWavelet
+
+SW = StreamingWavelet.Operator(128, 10000, 1, get_coeff=True)  # Initialize the Streaming Wavelet Operator
+
+# Generate a sequence of length 10000
+x_list = []
+for i in range(10000):
+    x_list.append(np.random.randn(128))  # Generate a random element of dim=128, and add it to the sequence
+
+for i in range(10000):
+    SW.add_signal(x_list[i])  # Update the wavelet coefficients by adding the new element
+    current_norm = SW.get_norm()  # Get the norm of the wavelet coefficients
+    print('Norm of Wavelet Coefficients of x_list[0:{}]:'.format(i), current_norm)  # Print the current norm of the wavelet coefficients
+    if (i + 1) % 1000 == 0:
+        print('Wavelet Coefficients of x_list[0:{}]:'.format(i), SW.all_coeff_arrs[:5])  # Print the wavelet coefficients
+```
