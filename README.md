@@ -6,25 +6,31 @@ applies wavelet transform to a sequence efficiently in an online manner (instead
 The **speed** of the Streaming Wavelet Operator is much faster than the traditional wavelet transform for streaming data,
 especially for long signals, due to its use of lazy updates and bit-wise operations in the implementation.
 
-_Reference:_
-
-- Qian et al., Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation. In Proceedings of the 41st International Conference on Machine Learning (ICML 2024).
-
 You can install the `StreamingWavelet` package in [https://pypi.org/project/StreamingWavelet/](https://pypi.org/project/StreamingWavelet/).
 
 We will first introduce the structure and requirements of the code, followed by a brief instruction for a quick start.
 
-## Code Structure
+## Reference:
 
-- `StreamingWavelet/StreamingWavelet.py`: The main file for the Streaming Wavelet Operator, which supports dozens of wavelet types.
+- Qian et al., Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation. In Proceedings of the 41st International Conference on Machine Learning (ICML 2024).
+
+## Install:
+
+```
+pip install StreamingWavelet
+```
+
+## Code Structure:
+
+- `StreamingWavelet/StreamingWavelet.py`: The main file for the Streaming Wavelet Operator, which supports dozens types of wavelet bases.
 - `StreamingWavelet/MakeCDJVFilter.py`: The file for generating the filters of different wavelet transforms, thanks to the MatLab code of _Cohen, Daubechies, Jawerth and Vial, 1992_.
 - `StreamingWavelet/wavelet_coeff`: The folder for storing the different wavelet coefficients.
 
-## Requirements
+## Requirements:
 
 * numpy>=1.19.0
 
-## Quick Start
+## Quick Start & Demos:
 
 We provide a concrete demo here.
 For example, one can use the following code to generate the following Streaming Wavelet Operator
@@ -80,3 +86,12 @@ for i in range(10000):
     if (i + 1) % 1000 == 0:
         print('Wavelet Coefficients of x_list[0:{}]:'.format(i), SW.all_coeff_arrs[:5])  # Print the wavelet coefficients
 ```
+
+## Parameters in `StreamingWavelet.Operator`:
+
+- `dim`: The dimension of the input signal.
+- `max_length`: The maximum length of the sequence.
+- `order`: The order of the wavelet transform (e.g., order=1 means Haar wavelets; order>=2 means various Daubechies wavelets).
+- `get_coeff`: Whether to maintain the whole wavelet coefficients (default: False).
+- `axis`: The axis to apply the wavelet transform (default: -1).
+- `verbose`: Whether to print the running information (default: False).
