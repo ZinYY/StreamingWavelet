@@ -12,7 +12,7 @@ In Proceedings of the 41st International Conference on Machine Learning (ICML 20
 '''
 
 import copy
-from MakeCDJVFilter import MakeCDJVFilter
+from .MakeCDJVFilter import MakeCDJVFilter
 from .wavelets_coeff import \
     (db2, db3, db4, db5, db6, db7, db8, db9, db10,
      db11, db12, db13, db14, db15, db16, db17, db18, db19, db20,
