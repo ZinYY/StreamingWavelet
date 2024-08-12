@@ -77,12 +77,7 @@ class StreamingWavelet_order1():
         self.verbose = verbose
         
         # wavelets of different orders
-        if self.order == 1:
-            self.wavelets_coeff = haar.Haar
-        elif self.order > 20:
-            raise NotImplementedError
-        else:
-            self.wavelets_coeff = eval('db{}.Daubechies{}'.format(str(self.order), str(self.order)))
+        self.wavelets_coeff = haar.Haar()
         
         self.wavelets_coeff.decompositionLowFilter = \
             np.array(self.wavelets_coeff.decompositionLowFilter).reshape(-1, 1).repeat(dim, axis=1)

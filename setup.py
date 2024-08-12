@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="StreamingWavelet",
-    version="1.0.5",
+    version="1.0.6",
     author="Yu-Yang Qian",
     url='https://github.com/ZinYY/StreamingWavelet',
     author_email="qianyy@lamda.nju.edu.cn",
