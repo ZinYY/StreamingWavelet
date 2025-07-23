@@ -14,6 +14,16 @@ We will first introduce the structure and requirements of the code, followed by 
 
 - Qian et al., Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation. In Proceedings of the 41st International Conference on Machine Learning (ICML 2024).
 
+    ```bibtex
+    @inproceedings{ICML'24:Wavelet,
+        author = {Yu-Yang Qian and Peng Zhao and Yu-Jie Zhang and Masashi Sugiyama and Zhi-Hua Zhou},
+        title = {Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation},
+        booktitle = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+        year = {2024},
+        pages = {41383--41415}
+    }
+    ```
+
 ## Install:
 
 ```
