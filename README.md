@@ -1,28 +1,13 @@
-# Python implementation for _Streaming Wavelet Operator_
+# Python implementation for Streaming Wavelet Operator ⚡️
 
-This is the python implementation for the Streaming Wavelet Operator, which **sequentially**
-applies wavelet transform to a sequence efficiently in an online manner (instead of recalculation in each round).
+This is the official python implementation for the Streaming Wavelet Operator in the paper [Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation](https://openreview.net/forum?id=KNedb3bQ4h), which **sequentially** applies wavelet transform to a sequence efficiently in an online manner (instead of recalculation in each round).
 
-The **speed** of the Streaming Wavelet Operator is much faster than the traditional wavelet transform for streaming data,
-especially for long signals, due to its use of lazy updates and bit-wise operations in the implementation.
+The **speed** of the Streaming Wavelet Operator is much faster than the traditional wavelet transform for streaming data, especially for long signals, due to its use of lazy updates and bit-wise operations in the implementation.
 
 You can install the `StreamingWavelet` package in [https://pypi.org/project/StreamingWavelet/](https://pypi.org/project/StreamingWavelet/).
 
 We will first introduce the structure and requirements of the code, followed by a brief instruction for a quick start.
 
-## Reference:
-
-- Qian et al., Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation. In Proceedings of the 41st International Conference on Machine Learning (ICML 2024).
-
-    ```bibtex
-    @inproceedings{ICML'24:Wavelet,
-        author = {Yu-Yang Qian and Peng Zhao and Yu-Jie Zhang and Masashi Sugiyama and Zhi-Hua Zhou},
-        title = {Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation},
-        booktitle = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
-        year = {2024},
-        pages = {41383--41415}
-    }
-    ```
 
 ## Install:
 
@@ -97,7 +82,7 @@ for i in range(10000):
         print('Wavelet Coefficients of x_list[0:{}]:'.format(i), SW.all_coeff_arrs[:5])  # Print the wavelet coefficients
 ```
 
-## Parameters in `StreamingWavelet.Operator`:
+## Parameters:
 
 - `dim`: The dimension of the input signal.
 - `max_length`: The maximum length of the sequence.
@@ -105,3 +90,21 @@ for i in range(10000):
 - `get_coeff`: Whether to maintain the whole wavelet coefficients (default: False).
 - `axis`: The axis to apply the wavelet transform (default: -1).
 - `verbose`: Whether to print the running information (default: False).
+
+
+
+## Citation:
+
+If you find this code useful in your research, please cite:
+
+- Qian et al., Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation. In Proceedings of the 41st International Conference on Machine Learning (ICML 2024).
+
+    ```bibtex
+    @inproceedings{ICML'24:Wavelet,
+        author = {Yu-Yang Qian and Peng Zhao and Yu-Jie Zhang and Masashi Sugiyama and Zhi-Hua Zhou},
+        title = {Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation},
+        booktitle = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+        year = {2024},
+        pages = {41383--41415}
+    }
+    ```
