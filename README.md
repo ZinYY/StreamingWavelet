@@ -1,15 +1,13 @@
-# Python implementation for Streaming Wavelet Operator ⚡️
+# Python Implementation for Streaming Wavelet Operator
 
 This is the official python implementation for the Streaming Wavelet Operator in the paper [Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation](https://openreview.net/forum?id=KNedb3bQ4h), which **sequentially** applies wavelet transform to a sequence efficiently in an online manner (instead of recalculation in each round).
 
-The **speed** of the Streaming Wavelet Operator is much faster than the traditional wavelet transform for streaming data, especially for long signals, due to its use of lazy updates and bit-wise operations in the implementation.
-
-You can install the `StreamingWavelet` package in [https://pypi.org/project/StreamingWavelet/](https://pypi.org/project/StreamingWavelet/).
-
-We will first introduce the structure and requirements of the code, followed by a brief instruction for a quick start.
+The **speed** of the Streaming Wavelet Operator is much faster than the traditional wavelet transform for streaming data, especially for long signals, due to its use of lazy updates and bit-wise operations in the implementation. We will first introduce the structure and requirements of the code, followed by a brief instruction for a quick start.
 
 
 ## Install:
+
+You can install the `StreamingWavelet` package in [https://pypi.org/project/StreamingWavelet/](https://pypi.org/project/StreamingWavelet/):
 
 ```
 pip install StreamingWavelet
@@ -95,7 +93,7 @@ for i in range(10000):
 
 ## Citation:
 
-If you find this code useful in your research, please cite:
+If you find this code useful in your research, please star our project and cite:
 
 - Qian et al., Efficient Non-stationary Online Learning by Wavelets with Applications to Online Distribution Shift Adaptation. In Proceedings of the 41st International Conference on Machine Learning (ICML 2024).
 
